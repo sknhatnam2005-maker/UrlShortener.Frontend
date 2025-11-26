@@ -32,7 +32,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          # nếu package-lock.json nằm trong Frontend thì path này đúng
           cache-dependency-path: 'Frontend/package-lock.json'
 
       - name: Install dependencies
@@ -109,8 +108,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ env.DOCKER_IMAGE }}:buildcache
-cache-to: type=registry,ref=${{ env.DOCKER_IMAGE }}:buildcache,mode=max
-          build-args: |
+          cache-to: type=registry,ref=${{ env.DOCKER_IMAGE }}:buildcache,mode=max
+build-args: |
             VITE_API_URL=${{ secrets.VITE_API_URL }}
 
 
