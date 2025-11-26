@@ -67,3 +67,8 @@ src/
 - Vite
 - Axios
 - Nginx (production)
+
+### Clone repositories
+```bash
+git clone https://github.com/sknhatnam2005-maker/UrlShortener.Frontend.git
+git clone https://github.com/sknhatnam2005-maker/UrlShortener.Backend.git
